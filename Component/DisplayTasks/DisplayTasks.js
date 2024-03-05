@@ -1,5 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
+import Test from "../Test";
 
 const DisplayTasks = ({ tasks, taskUpdater }) => {
     const completeTaskHandler = (task) => {
@@ -45,6 +47,7 @@ const DisplayTasks = ({ tasks, taskUpdater }) => {
                     );
                 })}
             </ul>
+            <Link to="/test">To Test</Link>
         </div>
     );
 };

@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ToDoApp from "./ToDoApp";
+import Test from '../Component/Test';
 
-console.log(document);
 const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
 
-root.render(
-    <StrictMode>
-        <ToDoApp />
-    </StrictMode>
+ReactDOM.render(
+    <React.StrictMode>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<ToDoApp />} />
+                <Route path='/test' element={<Test />}></Route>
+            </Routes>
+        </BrowserRouter>
+    </React.StrictMode>,
+    rootElement
 );
